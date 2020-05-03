@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2>My Profile</h2>
+            <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><span class="fa fa-user">Welcome<%= user.username %> </span></h3>
+            <p>
+                <strong>id</strong> <%= user.id %><br>
+                <strong>id</strong> <%= user.name %> <br>
+            </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

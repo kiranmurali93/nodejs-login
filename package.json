@@ -1,0 +1,49 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "starter kit for node project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=app,app:* nodemon app.js",
+    "lint": "eslint app.js"
+  },
+  "author": "kiran",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "chalk": "^4.0.0",
+    "connect-flash": "^0.1.1",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "flash": "^1.1.0",
+    "jquery": "^3.5.0",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.11",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
+}

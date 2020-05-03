@@ -1,0 +1,14 @@
+
+
+@media only screen and (min-width:800px)
+{
+    .loginbox{
+        width: 40vw;
+        border-color: black;
+    }
+}
+
+.form-control
+{
+    width: 30vw;
+}

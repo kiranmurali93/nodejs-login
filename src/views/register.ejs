@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index File</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!--Navbar begins-->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Vehicle Surveillance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login">Login</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./register">Register <span class="sr-only">(current)</span></a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+   </header>
+   <!--Navbar ends-->
+
+   <!--register section start-->
+ 
+   
+   <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Register
+        </h1>
+       <!--error start-->
+       <% if(typeof errors != 'undefined'){ %> 
+        <% errors.forEach(function(error) { %>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= error.msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% }); %> 
+          <% } %>
+          <% if(success_msg != ''){ %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= success_msg %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %> <% if(error_msg != ''){ %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error_msg %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %> <% if(error != ''){ %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %>
+       <!--error end-->
+
+
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="designation">designation</label>
+            <input
+              type="designation"
+              id="designation"
+              name="designation"
+              class="form-control"
+              placeholder="Enter designation"
+              value="<%= typeof designation != 'undefined' ? designation : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">username</label>
+            <input
+              type="username"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Enter username"
+              value="<%= typeof username != 'undefined' ? username : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              class="form-control"
+              placeholder="Confirm Password"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Register
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
+      </div>
+    </div>
+  </div>
+  
+   
+
+   <!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
