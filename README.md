@@ -7,6 +7,7 @@ Login and registration using nodejs and mongodb
 - run
   
         npm install
+- Update the MongoURI in the /src/config/keys.js file
 
 
 ## packages Installed
